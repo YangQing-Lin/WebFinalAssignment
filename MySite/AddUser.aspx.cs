@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using System.Data.SqlClient;
 
 namespace MySite
 {
@@ -53,30 +54,55 @@ namespace MySite
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            if (Request.QueryString["id"] == null)
+            SqlConnection co = new SqlConnection();
+            co.ConnectionString = "server=(local);uid=lqc;pwd=123;database=class";
+            co.Open();
+
+            SqlCommand cm = new SqlCommand();
+            cm.CommandText = "select * from AdminInfo where id='" + txtId.Text + "'";
+            cm.Connection = co;
+            SqlDataReader dr = cm.ExecuteReader();
+            if (dr.Read())
             {
-                int rs= help.AddUser(txtId.Text,txtName.Text,txtPwd.Text,RadioButtonList1.SelectedValue);
-                if (rs > 0)
-                {
-                    Response.Redirect("Index.aspx");
-                }
-                else
-                {
-                    Response.Write("<script>alert('保存失败');</script>");
-                }
+                Response.Write("<script>alter(" + "不能有两个相同的学号" + ")</script>");
+                co.Close();
+                dr.Close();
             }
             else
             {
-                int result= help.UpdateUser(txtId.Text, txtName.Text, txtPwd.Text, RadioButtonList1.SelectedValue);
-                if (result > 0)
-                {
-                    Response.Redirect("Index.aspx");
-                }
-                else
-                {
-                    Response.Write("<script>alert('保存失败');</script>");
-                }
+                dr.Close();
+                cm.CommandText = "insert into AdminInfo(id,Name,Pwd,Sex) values('" + txtId.Text + "','" + txtName.Text + "','" + txtPwd.Text + "','" + RadioButtonList1.SelectedValue + "')";
+                cm.Connection = co;
+                cm.ExecuteNonQuery();
+                Response.Write("<script>alter(" + "添加成功" + ")</script>");
+                co.Close();
             }
+
+
+            //if (Request.QueryString["id"] == null)
+            //{
+            //    int rs= help.AddUser(txtId.Text,txtName.Text,txtPwd.Text,RadioButtonList1.SelectedValue);
+            //    if (rs > 0)
+            //    {
+            //        Response.Redirect("Index.aspx");
+            //    }
+            //    else
+            //    {
+            //        Response.Write("<script>alert('保存失败');</script>");
+            //    }
+            //}
+            //else
+            //{
+            //    int result= help.UpdateUser(txtId.Text, txtName.Text, txtPwd.Text, RadioButtonList1.SelectedValue);
+            //    if (result > 0)
+            //    {
+            //        Response.Redirect("Index.aspx");
+            //    }
+            //    else
+            //    {
+            //        Response.Write("<script>alert('保存失败');</script>");
+            //    }
+            //}
         }
     }
 }

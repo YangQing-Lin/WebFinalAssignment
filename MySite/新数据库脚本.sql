@@ -2,9 +2,9 @@
 --go
 --use StudentCourseManagementSystem
 --go
-create database test
+create database SCMS
 go
-use test
+use SCMS
 go
 
 
@@ -14,9 +14,10 @@ create table AdminInfo
 id nvarchar(20) not null primary key,--编号
 Name nvarchar(20) not null,--姓名
 Pwd nvarchar(50) not null,--密码
+Sex nvarchar(5) not null--性别
 )
 go
-insert into AdminInfo values('admin','admin','123')
+insert into AdminInfo values('admin','admin','123', '男')
 go
 
 
