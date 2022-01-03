@@ -1,11 +1,11 @@
-﻿--create database StudentCourseManagementSystem
---go
---use StudentCourseManagementSystem
---go
-create database test
+﻿create database StudentCourseManagementSystem
 go
-use test
+use StudentCourseManagementSystem
 go
+--create database test
+--go
+--use test
+--go
 
 
 --管理员信息

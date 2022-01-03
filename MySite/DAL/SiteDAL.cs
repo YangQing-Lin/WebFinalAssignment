@@ -17,7 +17,7 @@ namespace MySite
         private string strCon = "Data Source=.;Initial Catalog=MyDB;Integrated Security=true";
 
         // 根据id、name、sex查询[UserInfo]表
-        public DataSet GetUser(string id, string name ,string sex)
+        public DataSet GetUser(string id, string name)
         {
             string sqlstr = "select * from UserInfo where 1=1 ";
             if (id != "" && id != null)

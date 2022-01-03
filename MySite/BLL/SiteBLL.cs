@@ -11,9 +11,9 @@ namespace MySite
     public class SiteBLL
     {
         SiteDAL DAL = new SiteDAL();
-        public DataSet GetUser(string id, string name ,string sex)
+        public DataSet GetUser(string id, string name)
         {
-            return DAL.GetUser(id,name,sex);
+            return DAL.GetUser(id,name);
         }
 
         internal int DeleteSafe(string Id)

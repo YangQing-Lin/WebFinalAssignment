@@ -34,17 +34,6 @@
             </td>
         </tr>
         <tr>
-            <td width="20px">
-                <asp:Label runat="server" Text="性别："></asp:Label>
-            </td>
-            <td align="left">
-                <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow" >
-                    <asp:ListItem Selected="True">男</asp:ListItem>
-                    <asp:ListItem>女</asp:ListItem>
-                </asp:RadioButtonList>
-            </td>
-        </tr>
-        <tr>
             <td colspan="2" align="left" width="100%">
                 <asp:Button ID="btnSave" runat="server" Text="保  存"  Width="76px" OnClick="btnSave_Click" />
             </td>
