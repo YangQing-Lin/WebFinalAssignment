@@ -55,7 +55,7 @@ namespace MySite
         protected void btnSave_Click(object sender, EventArgs e)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = "server=(local);uid=lqc;pwd=123;database=class";
+            co.ConnectionString = "server=(local);uid=lqc;pwd=123;database=SCMS";
             co.Open();
 
             SqlCommand cm = new SqlCommand();
