@@ -50,6 +50,9 @@ namespace MySite
 
         SiteBLL sHelp = new SiteBLL();
 
+        // TODO
+        // 有BUG：编辑或者删除行元素之后无法保存
+        // 报错：Index越界
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             SqlConnection co = new SqlConnection();
