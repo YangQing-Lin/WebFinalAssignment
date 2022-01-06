@@ -77,7 +77,7 @@ namespace MySite
 
         public void bind()
         {
-            DataSet myds = sHelp.GetUser("", txtIdOrName.Text, RadioButtonList1.SelectedValue);
+            DataSet myds = sHelp.GetUser("", txtIdOrName.Text);
             // 注释法查出这一行保存了用户信息
             GridView1.DataSource = myds;
             GridView1.DataKeyNames = new string[] { "Id" };

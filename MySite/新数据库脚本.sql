@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿--create database StudentCourseManagementSystem
 --go
 --use StudentCourseManagementSystem
@@ -5,7 +6,16 @@
 create database SCMS
 go
 use SCMS
+=======
+﻿create database StudentCourseManagementSystem
 go
+use StudentCourseManagementSystem
+>>>>>>> dae12765ca371b672e1a971910bc388e8d8dadf2
+go
+--create database test
+--go
+--use test
+--go
 
 
 --管理员信息

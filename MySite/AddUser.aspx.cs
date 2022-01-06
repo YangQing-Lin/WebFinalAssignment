@@ -20,36 +20,36 @@ namespace MySite
         SiteBLL help = new SiteBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if (Request.QueryString["id"] == null)
-                {
-                    txtId.Text = "";
-                    txtName.Text = "";
-                    txtPwd.Attributes["value"] = "";
-                }
-                else
-                {
-                    id = Request.QueryString["id"];
-                    DataSet ds = help.GetUser(id, "", "全部");
-                    if (ds != null && ds.Tables != null && ds.Tables.Count > 0)
-                    {
-                        txtId.ReadOnly = true;
-                        txtId.Enabled = false;
-                        txtId.Text = ds.Tables[0].Rows[0]["Id"].ToString();
-                        txtName.Text = ds.Tables[0].Rows[0]["Name"].ToString();
-                        txtPwd.Attributes["value"] = ds.Tables[0].Rows[0]["Pwd"].ToString();
-                        if (ds.Tables[0].Rows[0]["Sex"].ToString() == "男")
-                        {
-                            RadioButtonList1.SelectedIndex = 0;
-                        }
-                        else
-                        {
-                            RadioButtonList1.SelectedIndex = 1;
-                        }
-                    }
-                }
-            }
+            //if (!IsPostBack)
+            //{
+            //    if (Request.QueryString["id"] == null)
+            //    {
+            //        txtId.Text = "";
+            //        txtName.Text = "";
+            //        txtPwd.Attributes["value"] = "";
+            //    }
+            //    else
+            //    {
+            //        id = Request.QueryString["id"];
+            //        DataSet ds = help.GetUser(id, "", "全部");
+            //        if (ds != null && ds.Tables != null && ds.Tables.Count > 0)
+            //        {
+            //            txtId.ReadOnly = true;
+            //            txtId.Enabled = false;
+            //            txtId.Text = ds.Tables[0].Rows[0]["Id"].ToString();
+            //            txtName.Text = ds.Tables[0].Rows[0]["Name"].ToString();
+            //            txtPwd.Attributes["value"] = ds.Tables[0].Rows[0]["Pwd"].ToString();
+            //            if (ds.Tables[0].Rows[0]["Sex"].ToString() == "男")
+            //            {
+            //                RadioButtonList1.SelectedIndex = 0;
+            //            }
+            //            else
+            //            {
+            //                RadioButtonList1.SelectedIndex = 1;
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -64,14 +64,22 @@ namespace MySite
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
+<<<<<<< HEAD
                 Response.Write("<script>alter(" + "不能有两个相同的学号" + ")</script>");
+=======
+                Response.Write("<script>alter(" + "不能有两个相同的id" + ")</script>");
+>>>>>>> dae12765ca371b672e1a971910bc388e8d8dadf2
                 co.Close();
                 dr.Close();
             }
             else
             {
                 dr.Close();
+<<<<<<< HEAD
                 cm.CommandText = "insert into AdminInfo(id,Name,Pwd,Sex) values('" + txtId.Text + "','" + txtName.Text + "','" + txtPwd.Text + "','" + RadioButtonList1.SelectedValue + "')";
+=======
+                cm.CommandText = "insert into AdminInfo(id,Name,Pwd) values('" + txtId.Text + "','" + txtName.Text + "','" + txtPwd.Text + "')";
+>>>>>>> dae12765ca371b672e1a971910bc388e8d8dadf2
                 cm.Connection = co;
                 cm.ExecuteNonQuery();
                 Response.Write("<script>alter(" + "添加成功" + ")</script>");

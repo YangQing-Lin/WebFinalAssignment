@@ -7,11 +7,13 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace MySite {
-    
-    
-    public partial class NewsShow {
-        
+namespace MySite
+{
+
+
+    public partial class NewsShow
+    {
+
         /// <summary>
         /// txtId 控件。
         /// </summary>
@@ -20,7 +22,7 @@ namespace MySite {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtId;
-        
+
         /// <summary>
         /// RequiredFieldValidator3 控件。
         /// </summary>
@@ -29,7 +31,7 @@ namespace MySite {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
-        
+
         /// <summary>
         /// txtName 控件。
         /// </summary>
@@ -38,7 +40,7 @@ namespace MySite {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtName;
-        
+
         /// <summary>
         /// RequiredFieldValidator1 控件。
         /// </summary>
@@ -47,7 +49,7 @@ namespace MySite {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
+
         /// <summary>
         /// txtPwd 控件。
         /// </summary>
@@ -56,7 +58,7 @@ namespace MySite {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPwd;
-        
+
         /// <summary>
         /// RequiredFieldValidator2 控件。
         /// </summary>
@@ -65,16 +67,7 @@ namespace MySite {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-        
-        /// <summary>
-        /// RadioButtonList1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
-        
+
         /// <summary>
         /// btnSave 控件。
         /// </summary>
